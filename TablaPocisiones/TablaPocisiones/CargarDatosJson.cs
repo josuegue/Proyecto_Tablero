@@ -16,7 +16,7 @@ namespace TablaPocisiones
         private string [,] contenido;
         //path de donde esta la ubicacion del archivo
         private static string path_archivo = @"C:\Users\click\source\repos\TablaPocisiones\TablaPocisiones\Class\Archivos\TablaEquipos.json";
-        private void obtener_datos()
+        public string [,]? obtener_datos()
         {
             // Inicializo las variables siguientes
             /*
@@ -66,25 +66,26 @@ namespace TablaPocisiones
                     
                 }
                 //se asigna a mi variable global para poder manipular las busquedas y las reasignaciones de datos.
-                this.contenido = array2d;
+                return array2d;
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+			return null;
 
         }
 
-        public void ver_matriz()
+        public void ver_matriz(string [,] matriz)
         {
-            obtener_datos();
+            
 
-            for (int i = 0; i < this.contenido.GetLength(0); i++)
+            for (int i = 0; i < matriz.GetLength(0); i++)
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    Console.Write(this.contenido[i,j] + "| ");
+                    Console.Write(matriz[i,j] + "| ");
                     
 
                 }
@@ -114,9 +115,23 @@ namespace TablaPocisiones
         /*
          * Geneerar un nuevo archivo Json 
          */
-        public void archivo_nuevo()
+        public void archivo_nuevo(string [,] matriz_datos)
         {
-
+			Tabla data = new Tabla();
+            List<Tabla> lista = new List<Tabla>();
+            for (int i = 0; i < matriz_datos.GetLength(0); i++)
+            {
+                data.nombreEquipo = matriz_datos[i, 0];
+                data.jornada = Int32.Parse(matriz_datos[i, 1]);
+                data.puntos = Int32.Parse(matriz_datos[i, 2]);
+                data.ganados = Int32.Parse(matriz_datos[i, 3]);
+                data.perdidos = Int32.Parse(matriz_datos[i, 4]);
+                data.empates = Int32.Parse(matriz_datos[i, 5]);
+                data.goles_favor = Int32.Parse(matriz_datos[i, 6]);
+                data.goles_contra = Int32.Parse(matriz_datos[i, 7]);
+                data.df_goles = Int32.Parse(matriz_datos[i, 8]);
+                lista.Add(data);
+            }
         }
     }
 }

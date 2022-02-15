@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\click\\source\\repos\\TablaPocisiones\\TablaPocisiones\\TablaPocisiones.csproj": {}
+    "C:\\Users\\click\\Documents\\ProyectosCsharp\\Equipofut\\TablaPocisiones\\TablaPocisiones\\TablaPocisiones.csproj": {}
   },
   "projects": {
-    "C:\\Users\\click\\source\\repos\\TablaPocisiones\\TablaPocisiones\\TablaPocisiones.csproj": {
+    "C:\\Users\\click\\Documents\\ProyectosCsharp\\Equipofut\\TablaPocisiones\\TablaPocisiones\\TablaPocisiones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\click\\source\\repos\\TablaPocisiones\\TablaPocisiones\\TablaPocisiones.csproj",
+        "projectUniqueName": "C:\\Users\\click\\Documents\\ProyectosCsharp\\Equipofut\\TablaPocisiones\\TablaPocisiones\\TablaPocisiones.csproj",
         "projectName": "TablaPocisiones",
-        "projectPath": "C:\\Users\\click\\source\\repos\\TablaPocisiones\\TablaPocisiones\\TablaPocisiones.csproj",
+        "projectPath": "C:\\Users\\click\\Documents\\ProyectosCsharp\\Equipofut\\TablaPocisiones\\TablaPocisiones\\TablaPocisiones.csproj",
         "packagesPath": "C:\\Users\\click\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\click\\source\\repos\\TablaPocisiones\\TablaPocisiones\\obj\\",
+        "outputPath": "C:\\Users\\click\\Documents\\ProyectosCsharp\\Equipofut\\TablaPocisiones\\TablaPocisiones\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\click\\AppData\\Roaming\\NuGet\\NuGet.Config",
