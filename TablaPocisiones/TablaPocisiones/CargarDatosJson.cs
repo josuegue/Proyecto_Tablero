@@ -14,8 +14,10 @@ namespace TablaPocisiones
     {
         //Variable en a que se va a guardar la matriz
         private string [,] contenido;
+
+        private string path_archivo_new = @"C:\Users\click\Downloads\NuevoJson.json";
         //path de donde esta la ubicacion del archivo
-        private static string path_archivo = @"C:\Users\click\source\repos\TablaPocisiones\TablaPocisiones\Class\Archivos\TablaEquipos.json";
+        private static string path_archivo = @"C:\Users\click\Documents\ProyectosCsharp\Equipofut\TablaPocisiones\TablaPocisiones\Class\Archivos\TablaEquipos.json";
         public string [,]? obtener_datos()
         {
             // Inicializo las variables siguientes
@@ -132,6 +134,10 @@ namespace TablaPocisiones
                 data.df_goles = Int32.Parse(matriz_datos[i, 8]);
                 lista.Add(data);
             }
+
+            var listaJson = JsonConvert.SerializeObject(lista);
+            System.IO.File.WriteAllText(this.path_archivo_new, listaJson);
+            Console.WriteLine($"Archivo Json creado, ver en el path {this.path_archivo_new}");
         }
     }
 }
