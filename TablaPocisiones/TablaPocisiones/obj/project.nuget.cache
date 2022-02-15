@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L1MwluT6qOcVIX/oR5rGIs3bSE33SOoGvsM5Oq3HhCdu0gH6Maz35QK16ZlcgFbPNNnMY0eX+YIwMqQtQdss/A==",
+  "dgSpecHash": "cFMMXbLpQEyUouAjy+1WXbDILn2PKwghM5Gs4WrzSJTkRMMRSZ7fyDCo3lWV7S44EKPOU1RsRo7tnEM2gL5KvA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\click\\source\\repos\\TablaPocisiones\\TablaPocisiones\\TablaPocisiones.csproj",
+  "projectFilePath": "C:\\Users\\click\\Documents\\ProyectosCsharp\\Equipofut\\TablaPocisiones\\TablaPocisiones\\TablaPocisiones.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\click\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],

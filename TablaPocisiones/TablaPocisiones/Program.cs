@@ -10,7 +10,8 @@ namespace TablaPocisiones
         static void Main(string [] args)
         {
             CargarDatosJson cargar = new CargarDatosJson();
-            cargar.ver_matriz();
+            String[,] datos = cargar.obtener_datos();
+            cargar.ver_matriz(datos);
             Console.WriteLine("Termino de cargar datos");
         }
     }
