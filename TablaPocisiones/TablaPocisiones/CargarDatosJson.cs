@@ -12,8 +12,7 @@ namespace TablaPocisiones
 {
     internal class CargarDatosJson
     {
-        //Variable en a que se va a guardar la matriz
-        private string [,] contenido;
+
 
         private string path_archivo_new = @"C:\Users\click\Downloads\NuevoJson.json";
         //path de donde esta la ubicacion del archivo
@@ -85,7 +84,7 @@ namespace TablaPocisiones
 
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
-                for (int j = 0; j < 9; j++)
+                for (int j = 0; j < matriz.GetLength(1); j++)
                 {
                     Console.Write(matriz[i,j] + "| ");
                     
@@ -119,10 +118,11 @@ namespace TablaPocisiones
          */
         public void archivo_nuevo(string [,] matriz_datos)
         {
-			Tabla data = new Tabla();
+            Tabla data;
             List<Tabla> lista = new List<Tabla>();
             for (int i = 0; i < matriz_datos.GetLength(0); i++)
             {
+                data = new Tabla();
                 data.nombreEquipo = matriz_datos[i, 0];
                 data.jornada = Int32.Parse(matriz_datos[i, 1]);
                 data.puntos = Int32.Parse(matriz_datos[i, 2]);
@@ -133,6 +133,7 @@ namespace TablaPocisiones
                 data.goles_contra = Int32.Parse(matriz_datos[i, 7]);
                 data.df_goles = Int32.Parse(matriz_datos[i, 8]);
                 lista.Add(data);
+                
             }
 
             var listaJson = JsonConvert.SerializeObject(lista);
