@@ -13,6 +13,7 @@ namespace TablaPocisiones
             CargarDatosJson cargar = new CargarDatosJson();
             bool llave = true;
             string[,] datos = cargar.obtener_datos();
+            
             while (llave)
             {
                 Console.Write("\n---- MENU PRINCIPAL ----" +
@@ -53,12 +54,15 @@ namespace TablaPocisiones
                              * Aqui en vez de ver matriz se va a poner el metodo que ordena los equipos por puntuacion
                              */
                             Console.WriteLine("\n_____--- Datos de los equipos ---_____");
-                            cargar.ver_matriz(datos);
+                            String[,] datos_ordenados = cargar.ordenar_por_puntos(datos);
+                            cargar.ver_matriz(datos_ordenados);
                             Console.WriteLine("--------------- Final ---------------");
                             break;
                         case 2:
                             Console.WriteLine("\n_____--- Modificar datos ---_____");
-
+                            Console.Write("Ingresa nombre del equipo: ");
+                            string nombre_equipo = Console.ReadLine();
+                            cargar.modificar_datos(nombre_equipo, datos);
                             Console.WriteLine("------------- Final -------------");
                             break;
                         case 3:

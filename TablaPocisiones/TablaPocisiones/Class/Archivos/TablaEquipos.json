@@ -1,6 +1,6 @@
 [
 	{
-		"nombreEquipo": "Antigua GFC ",
+		"nombreEquipo": "Antigua GFC",
 		"jornada": 24,
 		"puntos": 50,
 		"ganados": 15,
@@ -11,7 +11,7 @@
 		"df_goles": 25
 	},
 	{
-		"nombreEquipo": "Comunicaciones ",
+		"nombreEquipo": "Comunicaciones",
 		"jornada": 24,
 		"puntos": 47,
 		"ganados": 14,
@@ -22,7 +22,7 @@
 		"df_goles": 23
 	},
 	{
-		"nombreEquipo": "Municipal ",
+		"nombreEquipo": "Municipal",
 		"jornada": 24,
 		"puntos": 43,
 		"ganados": 12,
@@ -33,7 +33,7 @@
 		"df_goles": 17
 	},
 	{
-		"nombreEquipo": "Malacateco ",
+		"nombreEquipo": "Malacateco",
 		"jornada": 24,
 		"puntos": 40,
 		"ganados": 11,
@@ -44,7 +44,7 @@
 		"df_goles": 14
 	},
 	{
-		"nombreEquipo": "Santa Lucia ",
+		"nombreEquipo": "Santa Lucia",
 		"jornada": 24,
 		"puntos": 39,
 		"ganados": 9,
@@ -55,7 +55,7 @@
 		"df_goles": 5
 	},
 	{
-		"nombreEquipo": "Xelaju MC ",
+		"nombreEquipo": "Xelaju MC",
 		"jornada": 24,
 		"puntos": 31,
 		"ganados": 8,
@@ -99,7 +99,7 @@
 		"df_goles": -11
 	},
 	{
-		"nombreEquipo": "Coban Imperial ",
+		"nombreEquipo": "Coban Imperial",
 		"jornada": 24,
 		"puntos": 24,
 		"ganados": 6,
@@ -110,7 +110,7 @@
 		"df_goles": -7
 	},
 	{
-		"nombreEquipo": "Nueva Concepcion ",
+		"nombreEquipo": "Nueva Concepcion",
 		"jornada": 24,
 		"puntos": 17,
 		"ganados": 4,
@@ -121,7 +121,7 @@
 		"df_goles": -31
 	},
 	{
-		"nombreEquipo": " Achuapa",
+		"nombreEquipo": "Achuapa",
 		"jornada": 24,
 		"puntos": 16,
 		"ganados": 3,
