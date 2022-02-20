@@ -80,12 +80,13 @@ namespace TablaPocisiones
 
         public void ver_matriz(string [,] matriz)
         {
-            
 
+            Console.WriteLine("Equipo | J  | Pts | G | P | E | GF | GC | DG| ");
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
                 for (int j = 0; j < matriz.GetLength(1); j++)
                 {
+                    
                     Console.Write(matriz[i,j] + "| ");
                     
 
@@ -97,10 +98,57 @@ namespace TablaPocisiones
          * Ordenar los datos por punteo. 
          * 
          */
-        public void ordenar_por_puntos()
+        public string [,] ordenar_por_puntos(string [,] matriz)
         {
+            string[,] mat_aux = new string[1, 9];
+            for (int i = 0; i< matriz.GetLength(0); i++)
+            {
+                for(int j = 1; j <matriz.GetLength(0); j++)
+                {
+                    if (int.Parse(matriz[i, 1]) < int.Parse(matriz[j, 1]) )
+                    {
+                        mat_aux[i, 0] = matriz[i, 0];
+                        mat_aux[i, 1] = matriz[i, 1];
+                        mat_aux[i, 2] = matriz[i, 2];
+                        mat_aux[i, 3] = matriz[i, 3];
+                        mat_aux[i, 4] = matriz[i, 4];
+                        mat_aux[i, 5] = matriz[i, 5];
+                        mat_aux[i, 6] = matriz[i, 6];
+                        mat_aux[i, 7] = matriz[i, 7];
+                        mat_aux[i, 8] = matriz[i, 8];
 
+                        matriz[i, 0] = matriz[j, 0];
+                        matriz[i, 1] = matriz[j, 1];
+                        matriz[i, 2] = matriz[j, 2];
+                        matriz[i, 3] = matriz[j, 3];
+                        matriz[i, 4] = matriz[j, 4];
+                        matriz[i, 5] = matriz[j, 5];
+                        matriz[i, 6] = matriz[j, 6];
+                        matriz[i, 7] = matriz[j, 7];
+                        matriz[i, 8] = matriz[j, 8];
+
+                        matriz[j, 0] = mat_aux[i, 0];
+                        matriz[j, 1] = mat_aux[i, 1];
+                        matriz[j, 2] = mat_aux[i, 2];
+                        matriz[j, 3] = mat_aux[i, 3];
+                        matriz[j, 4] = mat_aux[i, 4];
+                        matriz[j, 5] = mat_aux[i, 5];
+                        matriz[j, 6] = mat_aux[i, 6];
+                        matriz[j, 7] = mat_aux[i, 7];
+                        matriz[j, 8] = mat_aux[i, 8];
+
+
+
+
+
+
+
+                    }
+                }
+            }
+            return matriz;
         }
+
 
 
         /*
@@ -108,8 +156,103 @@ namespace TablaPocisiones
          * buscar al equipo por el nombre.
          * 
          */
-        public void modificar_datos(string nombre_equipo)
+        public void modificar_datos(string nombre_equipo, string [,] matriz)
         {
+            for(int i = 0; i < matriz.GetLength(0); i++)
+            {
+                if (nombre_equipo.ToLower().Equals(matriz[i, 0].ToLower()))
+                {
+                    Console.Write("Escribe 'si', 'no' o e'empate' y los formularios se desplegaran." +
+                        "\nEscribe opcion: ");
+                    string verificador = Console.ReadLine();
+                    if (verificador.ToLower().Equals("si"))
+                    {
+
+                        Console.Write("Goles a favor: ");
+                        int goles_fv = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Goles en contra: ");
+                        int goles_c = Convert.ToInt32(Console.ReadLine());
+                        int df_goles = (goles_fv) + (goles_c);
+
+                        int jornada = Convert.ToInt32(matriz[i, 1]) + 1;
+                        int puntos = Convert.ToInt32(matriz[i, 2]) + 3;
+                        int ganados = Convert.ToInt32(matriz[i, 3]) + 1;
+                        goles_fv = Convert.ToInt32(matriz[i, 6]) + goles_fv;
+                        goles_c = Convert.ToInt32(matriz[i, 7]) + goles_c;
+                        df_goles = goles_fv - goles_c;
+
+                        //jornada
+                        matriz[i, 1] = jornada.ToString();
+                        //puntos
+                        matriz[i, 2] = puntos.ToString();
+                        //ganados
+                        matriz[i, 3] = ganados.ToString();
+                        //Asignacion de goles
+                        matriz[i, 6] = goles_fv.ToString();
+                        matriz[i, 7] = goles_c.ToString();
+                        matriz[i,8]=df_goles.ToString();
+
+                        
+                    }
+                    else if (verificador.ToLower().Equals("no")){
+                        
+                        Console.Write("Goles a favor: ");
+                        int goles_fv = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Goles en contra: ");
+                        int goles_c = Convert.ToInt32(Console.ReadLine());
+                        int df_goles = (goles_fv) + (goles_c);
+
+                        int jornada = Convert.ToInt32(matriz[i, 1]) + 1;
+                        goles_fv = Convert.ToInt32(matriz[i, 6]) + goles_fv;
+                        goles_c = Convert.ToInt32(matriz[i, 7]) + goles_c;
+                        df_goles = goles_fv - goles_c;
+                        int perdidos = Convert.ToInt32(matriz[i, 4]) +1;
+                        //jornada
+                        matriz[i, 1] = jornada.ToString();
+                        //perdidos
+                        matriz[i, 4] = perdidos.ToString();
+                        //Asignacion de goles
+                        matriz[i, 6] = goles_fv.ToString();
+                        matriz[i, 7] = goles_c.ToString();
+                        matriz[i, 8] = df_goles.ToString();
+                    }
+                    else if (verificador.ToLower().Equals("empate"))
+                    {
+
+                        Console.Write("Goles a favor: ");
+                        int goles_fv = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Goles en contra: ");
+                        int goles_c = Convert.ToInt32(Console.ReadLine());
+
+
+                        int df_goles = (goles_fv) + (goles_c);
+                        int jornada = Convert.ToInt32(matriz[i, 1]) + 1;
+                        goles_fv = Convert.ToInt32(matriz[i, 6]) + goles_fv;
+                        goles_c = Convert.ToInt32(matriz[i, 7]) + goles_c;
+                        df_goles = goles_fv - goles_c;
+                        int empate = Convert.ToInt32(matriz[i, 5]) + 1;
+                        int puntos = Convert.ToInt32(matriz[i, 2]) + 1;
+
+                        //jornada
+                        matriz[i, 1] = jornada.ToString(); 
+                        //puntos
+                        matriz[i, 2] = puntos.ToString();
+                        //empates
+                        matriz[i, 5] = empate.ToString();
+                        //Asignacion de goles
+                        matriz[i, 6] =  goles_fv.ToString();
+                        matriz[i, 7] = goles_c.ToString();
+                        matriz[i, 8] = df_goles.ToString();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Opcion equivocada");
+                        break;
+                    }
+
+                }
+
+            }
 
         }
 
